@@ -1,0 +1,514 @@
+:root{
+    /* primary */
+    --Light-red: hsl(356, 100%, 66%);
+    --Very-light-red: hsl(355, 100%, 74%);
+    --Very-dark-blue: hsl(208, 49%, 24%);
+
+    /* neutral */
+    --White: hsl(0, 0%, 100%);
+    --Grayish-blue: hsl(240, 2%, 79%);
+    --Very-dark-grayish-blue: hsl(207, 13%, 34%);
+    --Very-dark-black-blue: hsl(240, 10%, 16%);
+
+    /* gradient */
+    --red-gradient: linear-gradient(90deg, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+    --blue-gradient: linear-gradient(90deg, hsl(237, 17%, 21%), hsl(237, 23%, 32%));
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+    outline: none;
+    list-style: none;
+    text-decoration: none;
+
+    padding: 0;
+    border: none;
+    margin: 0;
+}
+
+
+
+/* ___________nav___________ */
+nav{
+    display: flex;
+    font-family: 'Ubuntu', sans-serif;
+    height: 4.2em;
+    width: 100%;
+    padding: 1em 10%;
+    position: fixed;
+    z-index: 1;
+}
+
+.menu-bg{
+    background: hsla(0, 0%, 0%, 0.4);
+    display: none;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+nav > img{
+    margin: auto 0;
+}
+
+.nav-info{
+    display: flex;
+    color: var(--White);
+    width: 100%;
+    gap: 10%;
+    margin: 0 auto 0 5%;
+}
+
+.dropdown-container{
+    margin: auto 0;
+}
+
+.dropdowns{
+    display: inline-flex;
+    cursor: pointer;
+    gap: 0.2em;
+}
+
+.dropdowns > img{
+    margin: auto 0;
+}
+
+nav ul{
+    background: var(--White);
+    color: var(--Very-dark-black-blue);
+    display: none;
+    flex-direction: column;
+    gap: 1em;
+    
+    padding: 1em;
+    border-radius: 0.5em;
+    margin-top: 1em;
+}
+
+.show{
+    display: flex;
+}
+
+nav li:hover{
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.nav-buttons{
+    display: flex;
+    gap: 15%;
+    margin: auto 0 auto auto;
+}
+
+.nav-buttons a{
+    color: var(--White);
+}
+
+.nav-buttons p{
+    margin: auto 0;
+}
+
+.nav-buttons button{
+    color: var(--Light-red);
+    font-size: 15px;
+    font-weight: 700;
+    width: 8em;
+    cursor: pointer;
+
+    padding: 0.5em 1em;
+    border-radius: 2em;
+}
+
+.nav-buttons button:hover{
+    background: var(--Light-red);
+    color: var(--White);
+}
+
+/* ______scrolling active______ */
+.scrolling-active{
+    background: var(--Very-dark-black-blue);
+    height: 3em;
+    padding: 0.1em 10%;
+    transition: 1s;
+}
+
+.scrolling-active > img{
+    width: 5em;
+}
+
+/* ______mobile menu______ */
+#check, .checkbtn {
+    display: none;
+}
+
+.checkbtn {
+    cursor: pointer;
+    margin: auto 0 auto auto;
+}
+.close {
+    display: none;
+}
+
+#check:checked ~ .nav-info{
+    display: block;
+}
+#check:checked ~ .checkbtn .close {
+    display: block;
+}
+#check:checked ~ .checkbtn .menu {
+    display: none;
+}
+
+
+/* ___________main___________ */
+/* ______hero section______ */
+.hero-sect{
+    background: url(images/bg-pattern-intro.svg)
+                center no-repeat,
+                var(--red-gradient);
+    background-size: 150%;
+
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    height: 32em;
+    padding: 12em 10% 0;
+    border-bottom-left-radius: 8em;
+}
+
+.hero-sect > h1{
+    font-family: 'Overpass', sans-serif;
+    font-size: 52px;
+    color: var(--White);
+}
+
+.hero-sect > p{
+    font-weight: 400;
+    color: var(--Grayish-blue);
+}
+
+.hero-sect > button{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 15px;
+    padding: 0.8em 1.5em;
+    border-radius: 1.5em;
+    margin-top: 2em;
+}
+
+.start{
+    background: var(--White);
+    color: var(--Light-red);
+    font-weight: 700;
+}
+
+.start:hover{
+    background: var(--Light-red);
+    color: var(--White);
+}
+
+.learn{
+    background: none;
+    color: var(--White);
+    font-weight: 700;
+    border: var(--White) 1px solid;
+    margin-left: 1em;
+}
+
+.learn:hover{
+    background: var(--White);
+    color: var(--Light-red);
+}
+
+/* ______design section______ */
+.design-sect{
+    background: url(images/illustration-editor-desktop.svg)
+                no-repeat right -15em center;
+    background-size: 120vh;
+    height: 62em;
+    padding: 8em 10% 0;
+}
+
+.design-sect > h2{
+    color: var(--Very-dark-blue);
+    font-family: 'Overpass', sans-serif;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 4em;
+}
+
+.design-sect > div{
+    width: 42%;
+    margin-bottom: 5em;
+}
+
+.design-sect h3{
+    color: var(--Very-dark-blue);
+    font-family: 'Overpass', sans-serif;
+    font-size: 24px;
+    margin-bottom: 0.5em;
+}
+
+.design-sect p{
+    color: var(--Very-dark-grayish-blue);
+    font-family: 'Overpass', sans-serif;
+}
+
+/* ______art section______ */
+.art-sect{
+    background: url(images/bg-pattern-circles.svg)
+                no-repeat left -8em bottom -4em, var(--blue-gradient) no-repeat;
+    background-size: 90vh, contain;
+    font-family: 'Overpass', sans-serif;
+    height: 20em;
+
+    padding: 5em 0 0 45%;
+    border-top-right-radius: 6em;
+    border-bottom-left-radius: 6em;
+    position: relative;
+}
+
+.art-sect::before{
+    content: "";
+    background: url(images/illustration-phones.svg) no-repeat center;
+    background-size: 60vh;
+    height: 150%;
+    width: 50%;
+
+    position: absolute;
+    top: -25%;
+    left: 0;
+}
+
+.art-sect > h2{
+    color: var(--White);
+    font-size: 35px;
+    margin-bottom: 0.6em;
+}
+
+.art-sect > p{
+    color: var(--Grayish-blue);
+    width: 59%;
+}
+
+/* ______little about section______ */
+.little-about{
+    background: url(images/illustration-laptop-desktop.svg) no-repeat left -14em center;
+    background-size: 100vh;
+
+    font-family: 'Overpass', sans-serif;
+    height: 40em;
+    padding: 10em 0 0 45%;
+    margin: 6em 0 4em;
+}
+
+.little-about > div{
+    margin-bottom: 4em;
+}
+
+.little-about h3{
+    color: var(--Very-dark-blue);
+    font-size: 24px;
+    margin-bottom: 0.6em;
+}
+
+.little-about p{
+    color: var(--Very-dark-grayish-blue);
+    width: 59%;
+}
+
+
+/* ___________footer___________ */
+footer{
+    background: var(--Very-dark-black-blue);
+    display: flex;
+    gap: 20%;
+    font-family: 'Ubuntu', sans-serif;
+
+    padding: 4em 10%;
+    border-top-right-radius: 6em;
+}
+
+footer > img{
+    width: 4em;
+    margin-bottom: auto;
+}
+
+footer h4{
+    color: var(--White);
+    font-weight: 400;
+    cursor: pointer;
+    margin-bottom: 2em;
+}
+
+footer li{
+    color: var(--Grayish-blue);
+    cursor: pointer;
+    margin-bottom: 0.6em;
+}
+
+footer li:hover{
+    text-decoration: underline;
+}
+
+
+
+
+
+@media(max-width: 1124px){
+    /* ___________nav___________ */
+    .nav-info{
+        gap: 5%;
+        margin-left: 4%;
+    }
+    /* ___________main___________ */
+    /* ______hero section______ */
+    .hero-sect > h1{
+        font-size: 46px;
+    }
+    /* ______design section______ */
+    .design-sect{
+        background-size: 75%;
+    }
+    .design-sect > h2{
+        margin-bottom: 2em;
+    }
+    .design-sect > div{
+        margin-bottom: 2em;
+    }
+    /* ______art section______ */
+    .art-sect{
+        padding: 1em 0 0 55%;
+    }
+    .art-sect > h2{
+        font-size: 32px;
+        margin-bottom: 0.2em;
+    }
+    /* ______little about section______ */
+    .little-about{
+        background-size: 75%;
+        padding-top: 6em;
+    }
+    .little-about p{
+        width: 80%;
+    }
+
+    /* ___________footer___________ */
+    footer{
+        gap: 10%;
+    }
+}
+
+@media(max-width:740px){
+    /* ___________nav___________ */
+    .nav-info{
+        background: var(--White);
+        color: hsl(0, 0%, 0%);
+        display: none;
+        text-align: center;
+        font-size: 20px;
+
+        width: 80%;
+        top: 4em;
+        padding: 4em 0;
+        border-radius: 1em;
+        box-shadow: 0px 0px 10px 1px hsl(0, 0%, 0%);
+        
+        position: absolute;
+        left: 50%;
+        transform: translate(-55%);
+    }
+    .dropdown-container{
+        margin: 0 auto;
+    }
+    nav ul{
+        background: hsl(240, 2%, 92%);
+        width: 16em;
+        margin: 0 auto;
+    }
+    .nav-buttons{
+        flex-direction: column;
+        align-items: center;
+        padding-top: 1em;
+        border-top: var(--Grayish-blue) solid 1px;
+        margin-top: 2em;
+    }
+    .nav-buttons a{
+        color: hsl(0, 0%, 0%);
+    }
+    .nav-buttons > button{
+        background: var(--red-gradient);
+        color: var(--White);
+    }
+    .checkbtn {
+        display: inline;
+    }
+
+    /* ___________main___________ */
+    /* ______hero section______ */
+    .hero-sect > h1{
+        font-size: 38px;
+    }
+    /* ______design section______ */
+    .design-sect{
+        background: url(images/illustration-editor-mobile.svg)
+                    no-repeat center top 8em;
+        background-size: 70vh;
+        height: 78em;
+        text-align: center;
+        padding-top: 4em;
+    }
+    .design-sect > h2{
+        font-size: 32px;
+        margin-bottom: 12em;
+    }
+    .design-sect > div{
+        width: 100%;
+    }
+    /* ______art section______ */
+    .art-sect{
+        background-position: center top -18em, center;
+        text-align: center;
+        height: 32em;
+        padding: 16em 10% 0;
+    }
+    .art-sect::before{
+        width: 100%;
+        height: 140%;
+        top: -70%;
+    }
+    .art-sect > p{
+        width: 100%;
+    }
+    /* ______little about section______ */
+    .little-about{
+        background: url(images/illustration-laptop-mobile.svg) no-repeat center top;
+        text-align: center;
+        height: 52em;
+        padding: 24em 10% 0;
+    }
+    .little-about p{
+        width: 100%;
+    }
+
+    /* ___________footer___________ */
+    footer{
+        flex-direction: column;
+        text-align: center;
+    }
+    footer > img{
+        width: 6em;
+        margin: 0 auto 2em;
+    }
+    footer > div{
+        margin-bottom: 2em;
+    }
+    footer h4{
+        font-size: 20px;
+        margin-bottom: 1em;
+    }
+    footer li{
+        font-size: 18px;
+    }
+}
